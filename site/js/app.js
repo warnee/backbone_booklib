@@ -9,5 +9,6 @@ $(function() {
         {title: '웹개발 레시피', author: '브라이언 호건/정용식', releaseDate: '2013/02/15', keywords: 'Backbone', coverImage:'img/KOR9788966260607.jpg'}
     ];
 
-    new app.LibraryView(books);
+    //new app.LibraryView(books);
+    new app.LibraryView();
 });
