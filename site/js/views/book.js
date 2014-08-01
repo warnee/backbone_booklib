@@ -7,8 +7,8 @@ app.BookView = Backbone.View.extend({
         'click .delete': 'deleteBook'
     },
     deleteBook: function() {
-        this.model.destroy();
-        this.remove();
+        this.model.destroy(); // 화면상의 삭제
+        this.remove(); // 실제 삭제
     },
     //template: _.template( $('#bookTemplate').html() ),
     template: Hogan.compile($("#bookTemplate").html()),

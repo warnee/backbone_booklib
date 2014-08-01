@@ -25,7 +25,8 @@ app.LibraryView = Backbone.View.extend({
             }
         });
 
-        this.collection.create(formData);
+        //this.collection.add(new Book(formData)); // 화면에만 추가
+        this.collection.create(formData); // 실제 DB 까지 추가
     },
     render: function() {
         this.collection.each(function (item) {
