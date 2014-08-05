@@ -35,13 +35,26 @@
 -->
         <script type="text/template" id="bookTemplate">
             <img src="{{coverImage}}" />
-            <ul>
-                <li>{{title}}</li>
-                <li>{{author}}</li>
-                <li>{{releaseDate}}</li>
-                <li>{{keywords}}</li>
-            </ul>
-            <button class="delete">Delete</button>
+            <div class="viewMode" data-id="{{_id}}">
+                <ul>
+                    <li>{{title}}</li>
+                    <li>{{author}}</li>
+                    <li>{{releaseDate}}</li>
+                    <li>{{keywords}}</li>
+                </ul>
+                <button class="edit">Edit</button>
+                <button class="delete">Delete</button>
+            </div>
+            <div class="editMode" data-id="{{_id}}">
+                <ul>
+                    <li><input type="text" class="title" value="{{title}}" /></li>
+                    <li><input type="text" class="author" value="{{author}}" /></li>
+                    <li><input type="text" class="releaseDate" value="{{releaseDate}}" /></li>
+                    <li><input type="text" class="keywords" value="{{keywords}}" /></li>
+                </ul>
+                    <button class="cancel">Cancel</button>
+                    <button class="save">Save</button>
+            </div>
         </script>
 
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 

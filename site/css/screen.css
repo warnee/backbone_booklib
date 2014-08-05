@@ -50,6 +50,14 @@ body {
     clear: both;
 }
 
+.viewMode {
+    display: block;
+}
+
+.editMode {
+    display: none;
+}
+
 #addBook div {
     width: 550px;
 }
