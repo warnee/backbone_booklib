@@ -19,17 +19,19 @@ app.BookView = Backbone.View.extend({
     },
     saveBook: function() {
 
+        var editMode = $('.editMode[data-id="' + this.model.id + '"]');
+
         var editData = {};
-        editData.title = $('.editMode[data-id="' + this.model.id + '"] .title').val();
-        editData.author = $('.editMode[data-id="' + this.model.id + '"] .author').val();
-        editData.releaseDate = $('.editMode[data-id="' + this.model.id + '"] .releaseDate').val();
-        editData.keywords = $('.editMode[data-id="' + this.model.id + '"] .keywords').val();
+        editData.title = editMode.find('.title').val();
+        editData.author = editMode.find('.author').val();
+        editData.releaseDate = editMode.find('.releaseDate').val();
+        editData.keywords = editMode.find('.keywords').val();
 
         this.model.save(editData); // 저장
         this.render(); // model 재 설정
         //this.update();
         $('.viewMode[data-id="' + this.model.id + '"]').show();
-        $('.editMode[data-id="' + this.model.id + '"]').hide();
+        editMode.hide();
     },
     cancelBook: function() {
         $('.viewMode[data-id="' + this.model.id + '"]').show();
